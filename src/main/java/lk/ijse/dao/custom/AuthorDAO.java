@@ -1,4 +1,4 @@
 package lk.ijse.dao.custom;
 
-public interface AuthorBO {
+public interface AuthorDAO {
 }
