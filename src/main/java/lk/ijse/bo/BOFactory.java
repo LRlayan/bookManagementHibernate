@@ -14,7 +14,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        DASHBOARD,HOME,AUTHOR,BOOKS
+        DASHBOARD,HOME,AUTHOR,BOOKS,PAGES
     }
 
     public SuperBO boTypes(BOTypes boTypes){
