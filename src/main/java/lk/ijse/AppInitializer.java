@@ -10,7 +10,7 @@ import javafx.stage.StageStyle;
 public class AppInitializer extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent rootNode = FXMLLoader.load(getClass().getResource(""));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"));
         Scene scene = new Scene(rootNode);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
