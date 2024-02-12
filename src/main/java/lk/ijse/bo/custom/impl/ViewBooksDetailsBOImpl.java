@@ -1,11 +1,10 @@
 package lk.ijse.bo.custom.impl;
 
-import lk.ijse.bo.custom.AuthorBO;
 import lk.ijse.dto.AuthorDTO;
 
 import java.util.ArrayList;
 
-public class AuthorBOImpl implements AuthorBO {
+public class ViewBooksDetailsBOImpl implements lk.ijse.bo.custom.ViewBooksDetailsBO {
 
     @Override
     public boolean saveAuthor() {
