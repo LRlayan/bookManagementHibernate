@@ -1,7 +1,6 @@
 package lk.ijse.bo;
 
-import lk.ijse.bo.custom.impl.AuthorBOImpl;
-import lk.ijse.bo.custom.impl.BookBOImpl;
+import lk.ijse.bo.custom.impl.ViewBooksDetailsBO;
 import lk.ijse.bo.custom.impl.DashboardImpl;
 import lk.ijse.bo.custom.impl.HomeBOImpl;
 
@@ -14,15 +13,13 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        DASHBOARD,HOME,AUTHOR,BOOKS,PAGES
+        DASHBOARD,HOME,VIEW_BOOKS_DETAILS
     }
 
     public SuperBO boTypes(BOTypes boTypes){
         switch (boTypes){
-            case BOOKS:
-                return new BookBOImpl();
-            case AUTHOR:
-                return new AuthorBOImpl();
+            case VIEW_BOOKS_DETAILS:
+                return new ViewBooksDetailsBO();
             case DASHBOARD:
                 return new DashboardImpl();
             case HOME:

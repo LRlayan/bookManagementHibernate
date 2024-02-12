@@ -45,22 +45,17 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="137.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Save Author" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="137.0" onAction="#saveAuthorOnAction" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Save Author" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="422.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Save Book" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="422.0" onAction="#saveBookOnAction" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Save Book" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="48.0" layoutY="461.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Author View" textFill="WHITE">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="168.0" layoutY="461.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Books View" textFill="WHITE">
+      <JFXButton fx:id="viewBtn" buttonType="RAISED" layoutX="48.0" layoutY="461.0" onAction="#viewBookDetailsOnAction" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #030637;" text="View Books Details" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
