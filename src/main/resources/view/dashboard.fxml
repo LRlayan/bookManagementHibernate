@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="643.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.dashboardController">
+<AnchorPane fx:id="mainAnchorpane" prefHeight="643.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.dashboardController">
    <children>
       <ImageView fitHeight="643.0" fitWidth="928.0">
          <image>
             <Image url="@../images/books.jpg" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="394.0" layoutY="544.0" opacity="0.99" style="-fx-background-color: #1F2544;" text="Dashboard" textFill="WHITE">
+      <JFXButton fx:id="button" buttonType="RAISED" layoutX="359.0" layoutY="549.0" onAction="#goToHomeBtnOnAction" opacity="0.99" prefHeight="44.0" prefWidth="233.0" style="-fx-background-color: #1F2544;" text="Go  to  Home" textFill="WHITE">
          <font>
             <Font name="Calisto MT" size="23.0" />
          </font>
