@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.controller.HomePageFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="519.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HomePageFormController">
+   <children>
+      <Label layoutX="24.0" layoutY="29.0" text="Author">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Line endX="387.0" layoutX="186.0" layoutY="39.0" startX="-100.0" stroke="#02052f" />
+      <TextField layoutX="66.0" layoutY="88.0" prefHeight="26.0" prefWidth="468.0" promptText="Enter Name">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Label layoutX="65.0" layoutY="62.0" text="Author Name" />
+      <Label layoutX="24.0" layoutY="189.0" text="Books">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Line endX="387.0" layoutX="186.0" layoutY="199.0" startX="-100.0" stroke="#030637" />
+      <Label layoutX="65.0" layoutY="221.0" text="Title" />
+      <Label layoutX="65.0" layoutY="285.0" text="Publication year" />
+      <Label layoutX="64.0" layoutY="349.0" text="Price" />
+      <TextField layoutX="66.0" layoutY="243.0" prefHeight="26.0" prefWidth="468.0" promptText="Enter Book Title">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="66.0" layoutY="309.0" prefHeight="26.0" prefWidth="468.0" promptText="Enter publication year">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <TextField layoutX="66.0" layoutY="374.0" prefHeight="26.0" prefWidth="468.0" promptText="Enter book price">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="137.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Save Author" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="422.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Save Book" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="48.0" layoutY="461.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Author View" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="168.0" layoutY="461.0" prefHeight="30.0" prefWidth="95.0" style="-fx-background-color: #030637;" text="Books View" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
 </AnchorPane>
