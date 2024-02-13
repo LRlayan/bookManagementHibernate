@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import lk.ijse.bo.custom.HomeBO;
 import lk.ijse.bo.custom.impl.HomeBOImpl;
 import lk.ijse.config.FactoryConfiguration;
+import lk.ijse.dao.custom.AuthorDAO;
+import lk.ijse.dao.custom.impl.AuthorDAOImpl;
 import lk.ijse.dto.AuthorDTO;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.pages.Impl.PagesImpl;
@@ -25,6 +27,9 @@ public class HomePageFormController {
 
     @FXML
     private TextField txtAuthorName;
+
+    @FXML
+    private TextField txtCountry;
 
     @FXML
     private TextField txtBookTitle;
@@ -48,6 +53,7 @@ public class HomePageFormController {
     void saveAuthorOnAction(ActionEvent event) {
         var authorDTO = new AuthorDTO();
         authorDTO.setName(txtAuthorName.getText());
+        authorDTO.setCountry(txtCountry.getText());
 
         boolean isSaved = home.saveAuthor(authorDTO);
         if (isSaved){
@@ -65,30 +71,10 @@ public class HomePageFormController {
         bookDTO.setPrice(Double.parseDouble(txtPrice.getText()));
 
         boolean isSaved = home.saveBook(bookDTO);
-        if (isSaved){
-            new Alert(Alert.AlertType.INFORMATION,"Saved Book!").show();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Try Again!").show();
+        if (isSaved) {
+            new Alert(Alert.AlertType.INFORMATION, "Saved Book!").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Try Again!").show();
         }
     }
-
-//    public void saveRecord(String author, String bookTitle, String publishedYear, double price){
-//
-//        var authorDTO = new AuthorDTO();
-//        authorDTO.setName(author);
-//
-//        var bookDTO = new BookDTO();
-//        bookDTO.setTitle(bookTitle);
-//        bookDTO.setPublicationYear(publishedYear);
-//        bookDTO.setPrice(price);
-//
-//        Session session = FactoryConfiguration.getInstance().getSession();
-//        Transaction transaction = session.beginTransaction();
-//
-//        session.save(authorDTO);
-//        session.save(bookDTO);
-//
-//        transaction.commit();
-//        session.close();
-
 }
