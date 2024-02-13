@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import lk.ijse.bo.custom.HomeBO;
 import lk.ijse.bo.custom.impl.HomeBOImpl;
 import lk.ijse.dto.BookDTO;
@@ -47,6 +49,8 @@ public class viewBooksDetailsFormController implements Initializable {
 
     HomeBO home = new HomeBOImpl();
 
+    ObservableList<BookTM> obList = FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setCellValueFactory();
@@ -54,7 +58,6 @@ public class viewBooksDetailsFormController implements Initializable {
     }
 
     private void loadAllBooks() {
-        ObservableList<BookTM> obList = FXCollections.observableArrayList();
 
         for (BookDTO bookDTO :home.findAllBook()){
             obList.add(new BookTM(
@@ -64,10 +67,24 @@ public class viewBooksDetailsFormController implements Initializable {
                     bookDTO.getPrice(),
                     bookDTO.getAuthor().getId(),
                     new JFXButton("Update"),
-                    new JFXButton("Delete")
+                   new JFXButton("Delete")
             ));
         }
+        buttonsDesign();
         bookTable.setItems(obList);
+
+
+    }
+
+    private void buttonsDesign() {
+        for (int i = 0; i < obList.size(); i++) {
+
+             obList.get(i).getUpdate().setTextFill(Color.WHITE);
+             obList.get(i).getUpdate().setBackground(Background.fill(Color.GREEN));
+
+             obList.get(i).getDelete().setTextFill(Color.WHITE);
+             obList.get(i).getDelete().setBackground(Background.fill(Color.RED));
+        }
     }
 
     private void setCellValueFactory(){
