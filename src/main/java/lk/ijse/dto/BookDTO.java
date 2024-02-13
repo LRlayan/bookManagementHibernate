@@ -1,5 +1,6 @@
 package lk.ijse.dto;
 
+import lk.ijse.entity.Author;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,4 +13,5 @@ public class BookDTO {
     private String title;
     private String publicationYear;
     private double price;
+    private Author author;
 }
