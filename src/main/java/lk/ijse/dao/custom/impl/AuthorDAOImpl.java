@@ -12,7 +12,7 @@ public class AuthorDAOImpl implements AuthorDAO {
     }
 
     @Override
-    public boolean save() {
+    public boolean save(Author author) {
         return false;
     }
 
