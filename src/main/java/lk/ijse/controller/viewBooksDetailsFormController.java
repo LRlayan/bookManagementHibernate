@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.bo.custom.HomeBO;
 import lk.ijse.bo.custom.impl.HomeBOImpl;
 import lk.ijse.dto.BookDTO;
@@ -70,7 +71,13 @@ public class viewBooksDetailsFormController implements Initializable {
     }
 
     private void setCellValueFactory(){
-
+        colBookId.setCellValueFactory(new PropertyValueFactory<>("BookId"));
+        colBookTitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
+        colPublishedYear.setCellValueFactory(new PropertyValueFactory<>("PublishedYear"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
+        colAuthorId.setCellValueFactory(new PropertyValueFactory<>("AuthorId"));
+        colUpdate.setCellValueFactory(new PropertyValueFactory<>("Update"));
+        colDelete.setCellValueFactory(new PropertyValueFactory<>("Delete"));
     }
 
     public void question1OnAction(ActionEvent actionEvent) {
