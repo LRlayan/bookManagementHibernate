@@ -21,4 +21,11 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
+
+    public Book(int id, String title, String publicationYear, double price) {
+        this.id = id;
+        this.title = title;
+        this.publicationYear = publicationYear;
+        this.price = price;
+    }
 }
