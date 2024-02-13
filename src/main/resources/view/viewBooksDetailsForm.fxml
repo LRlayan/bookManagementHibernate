@@ -20,11 +20,11 @@
       <JFXButton layoutX="159.0" layoutY="70.0" onAction="#question2OnAction" text="Qeustion 02" />
       <TableView fx:id="bookTable" layoutX="38.0" layoutY="142.0" prefHeight="245.0" prefWidth="712.0">
         <columns>
-          <TableColumn fx:id="colBookId" prefWidth="87.0" text="Book_id" />
-            <TableColumn fx:id="colBookTitle" prefWidth="157.0" text="Book_title" />
-            <TableColumn fx:id="colPublishedYear" prefWidth="103.0" text="published_year" />
+          <TableColumn fx:id="colBookId" prefWidth="87.0" text="BookId" />
+            <TableColumn fx:id="colBookTitle" prefWidth="157.0" text="Title" />
+            <TableColumn fx:id="colPublishedYear" prefWidth="103.0" text="PublishedYear" />
             <TableColumn fx:id="colPrice" prefWidth="84.0" text="Price" />
-            <TableColumn fx:id="colAuthorId" prefWidth="68.0" text="Author_id" />
+            <TableColumn fx:id="colAuthorId" prefWidth="68.0" text="AuthorId" />
             <TableColumn fx:id="colUpdate" prefWidth="106.0" text="Update" />
             <TableColumn fx:id="colDelete" prefWidth="106.0" text="Delete" />
         </columns>
