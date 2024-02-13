@@ -1,5 +1,6 @@
 package lk.ijse.dao.custom.impl;
 
+import jakarta.persistence.Query;
 import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.custom.AuthorDAO;
 import lk.ijse.entity.Author;
@@ -38,7 +39,6 @@ public class AuthorDAOImpl implements AuthorDAO {
 
     @Override
     public List<Author> findAll() {
-      Session session1 = FactoryConfiguration.getInstance().getSession();
-      return session1.createQuery("SELECT id,name FROM Author").list();
+        return null;
     }
 }

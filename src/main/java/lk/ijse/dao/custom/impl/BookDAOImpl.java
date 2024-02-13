@@ -9,9 +9,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookDAOImpl implements BookDAO {
     public static Author author;
+
     @Override
     public boolean update() {
         return false;
@@ -43,7 +45,14 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public ArrayList<Book> findAll() {
-        return null;
+    public List<Book> findAll() {
+        Session session2 = FactoryConfiguration.getInstance().getSession();
+        return session2.createQuery("from Book").list();
+    }
+
+    @Override
+    public List<Book> findAllBookTitle() {
+        Session session1 = FactoryConfiguration.getInstance().getSession();
+        return session1.createQuery("from Book where publicationYear > '2010'").list();
     }
 }

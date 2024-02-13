@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -7,8 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="787.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.viewBooksDetailsFormController">
+<AnchorPane prefHeight="480.0" prefWidth="787.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.viewBooksDetailsFormController">
    <children>
       <Label layoutX="22.0" layoutY="27.0" text="Published Book Details">
          <font>
@@ -16,16 +16,15 @@
          </font>
       </Label>
       <Line endX="444.0" layoutX="316.0" layoutY="36.0" startX="-100.0" />
-      <TableView layoutX="43.0" layoutY="83.0" prefHeight="274.0" prefWidth="695.0">
+      <JFXButton layoutX="51.0" layoutY="70.0" onAction="#question1OnAction" text="Qeustion 01" />
+      <JFXButton layoutX="159.0" layoutY="70.0" onAction="#question2OnAction" text="Qeustion 02" />
+      <TableView fx:id="bookTable" layoutX="93.0" layoutY="167.0" prefHeight="245.0" prefWidth="601.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Author id" />
-          <TableColumn prefWidth="75.0" text="Author" />
-            <TableColumn prefWidth="81.0" text="Book Id" />
-            <TableColumn prefWidth="135.0" text="Title" />
-            <TableColumn prefWidth="94.0" text="Publish Date" />
-            <TableColumn minWidth="0.0" prefWidth="95.0" text="Price" />
-            <TableColumn prefWidth="71.0" text="Update" />
-            <TableColumn prefWidth="68.0" text="Delete" />
+          <TableColumn fx:id="colBookId" prefWidth="87.0" text="Book_id" />
+            <TableColumn fx:id="colBookTitle" prefWidth="204.0" text="Book_title" />
+            <TableColumn fx:id="colPublishedYear" prefWidth="123.0" text="published_year" />
+            <TableColumn fx:id="colPrice" prefWidth="101.0" text="Price" />
+            <TableColumn fx:id="colAuthorId" prefWidth="85.0" text="Author_id" />
         </columns>
       </TableView>
    </children>

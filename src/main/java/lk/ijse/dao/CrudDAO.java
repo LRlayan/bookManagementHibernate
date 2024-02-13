@@ -9,5 +9,5 @@ public interface CrudDAO<T> extends SuperDAO{
     boolean update();
     boolean save(T entity);
     boolean delete();
-   List<T> findAll();
+    List<T> findAll();
 }

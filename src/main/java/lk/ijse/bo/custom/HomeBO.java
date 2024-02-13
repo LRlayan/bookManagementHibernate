@@ -12,4 +12,6 @@ public interface HomeBO extends SuperBO {
     boolean saveBook(BookDTO bookDTO);
 
     List<AuthorDTO> findAllAuthor();
+    List<BookDTO> findAllBook();
+    List<BookDTO> books();
 }

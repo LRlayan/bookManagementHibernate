@@ -64,6 +64,12 @@
             <version>11.1.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>charm-glisten</artifactId>
+            <version>6.2.3</version>
+        </dependency>
+
     </dependencies>
 
 </project>

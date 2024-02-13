@@ -14,4 +14,8 @@ public class BookDTO {
     private String publicationYear;
     private double price;
     private Author author;
+
+    public BookDTO(String title) {
+        this.title = title;
+    }
 }
