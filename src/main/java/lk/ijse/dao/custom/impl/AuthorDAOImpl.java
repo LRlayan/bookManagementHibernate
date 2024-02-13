@@ -2,15 +2,17 @@ package lk.ijse.dao.custom.impl;
 
 import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.custom.AuthorDAO;
-import lk.ijse.dao.custom.BookDAO;
 import lk.ijse.entity.Author;
-import lk.ijse.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AuthorDAOImpl implements AuthorDAO {
+
+    private Session session;
+    private Transaction transaction;
     @Override
     public boolean update() {
         return false;
@@ -18,9 +20,8 @@ public class AuthorDAOImpl implements AuthorDAO {
 
     @Override
     public boolean save(Author author) {
-
-       Session session = FactoryConfiguration.getInstance().getSession();
-       Transaction transaction = session.beginTransaction();
+       session = FactoryConfiguration.getInstance().getSession();
+       transaction = session.beginTransaction();
 
        BookDAOImpl.author = author;
        session.save(author);
@@ -36,7 +37,8 @@ public class AuthorDAOImpl implements AuthorDAO {
     }
 
     @Override
-    public ArrayList<Author> findAll() {
-        return null;
+    public List<Author> findAll() {
+      Session session1 = FactoryConfiguration.getInstance().getSession();
+      return session1.createQuery("SELECT id,name FROM Author").list();
     }
 }
