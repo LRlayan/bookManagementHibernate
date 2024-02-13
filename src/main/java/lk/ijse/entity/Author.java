@@ -20,7 +20,8 @@ public class Author {
     @OneToMany(mappedBy = "author" , cascade = CascadeType.ALL)
     private List<Book> bookList;
 
-    public Author(String name) {
+    public Author(int id , String name) {
+        this.id = id;
         this.name = name;
     }
 }
