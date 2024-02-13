@@ -1,6 +1,7 @@
 package lk.ijse.dao.custom.impl;
 
 import lk.ijse.dao.custom.BookDAO;
+import lk.ijse.entity.Author;
 import lk.ijse.entity.Book;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public boolean save() {
+    public boolean save(Author author) {
         return false;
     }
 
