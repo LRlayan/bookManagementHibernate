@@ -1,5 +1,6 @@
 package lk.ijse.dao.custom.impl;
 
+import jakarta.persistence.Query;
 import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.custom.AuthorDAO;
 import lk.ijse.dao.custom.BookDAO;
@@ -20,19 +21,19 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public boolean save(Book book) {
+    public boolean save(Book entity) {
 
         ArrayList<Book> bookList = new ArrayList<>();
 
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        book.setAuthor(author);
+        entity.setAuthor(author);
         author.setBookList(bookList);
 
-        bookList.add(book);
+        bookList.add(entity);
 
-        session.save(book);
+        session.save(entity);
 
         transaction.commit();
         session.close();
@@ -40,8 +41,19 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public boolean delete() {
-        return false;
+    public boolean delete(int id) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("DELETE FROM Book b WHERE b.id = :id");
+        query.setParameter("id" ,id);
+
+        int row = query.executeUpdate();
+
+        transaction.commit();
+        session.close();
+
+        return row > 0;
     }
 
     @Override
