@@ -20,12 +20,8 @@ public class BookDTO {
         this.title = title;
     }
 
-    public BookDTO(int id, int authorId, String title, String publicationYear, double price, int percentage) {
-        this.id = id;
-        this.authorId = authorId;
-        this.title = title;
-        this.publicationYear = publicationYear;
-        this.price = price;
+    public BookDTO( int percentage) {
+
         this.percentage = percentage;
     }
 
