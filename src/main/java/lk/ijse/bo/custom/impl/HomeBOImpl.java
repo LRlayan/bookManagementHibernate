@@ -44,7 +44,7 @@ public class HomeBOImpl implements HomeBO {
                    book.getTitle(),
                    book.getPublicationYear(),
                    book.getPrice(),
-                   book.getAuthor()
+                   book.getAuthor().getId()
            ));
        }
        return bookDTOS;
