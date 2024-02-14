@@ -8,6 +8,6 @@ import java.util.List;
 public interface CrudDAO<T> extends SuperDAO{
     boolean update();
     boolean save(T entity);
-    boolean delete();
+    boolean delete(int id);
     List<T> findAll();
 }
