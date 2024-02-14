@@ -61,6 +61,18 @@ public class HomePageFormController {
         }else {
             new Alert(Alert.AlertType.ERROR,"Try Again!").show();
         }
+        clearTextField("Author");
+    }
+
+    private void clearTextField(String name) {
+        if (name.equals("Author")) {
+            txtAuthorName.clear();
+            txtCountry.clear();
+        }else {
+            txtBookTitle.clear();
+            txtPublishedYear.clear();
+            txtPrice.clear();
+        }
     }
 
     @FXML
@@ -76,5 +88,6 @@ public class HomePageFormController {
         } else {
             new Alert(Alert.AlertType.ERROR, "Try Again!").show();
         }
+        clearTextField("Book");
     }
 }
