@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import lk.ijse.bo.custom.UpdateBookBO;
 import lk.ijse.bo.custom.impl.UpdateBookBOImpl;
@@ -50,6 +51,8 @@ public class UpdateBookController implements Initializable {
 
     Pages pages = new PagesImpl();
 
+    UpdateBookBO updateBookBO = new UpdateBookBOImpl();
+
     @FXML
     void closeOnAction(ActionEvent event) {
         pages.closeWindow(btnClose);
@@ -57,7 +60,21 @@ public class UpdateBookController implements Initializable {
 
     @FXML
     void updateBooksOnAction(ActionEvent event) {
+        BookDTO bookDTO = new BookDTO(
+                Integer.parseInt(txtBookId.getText()),
+                Integer.parseInt(txtAuthorId.getText()),
+                txtBookTitle.getText(),
+                txtPublishedYear.getText(),
+                Double.parseDouble(txtPrice.getText()),
+                Integer.parseInt(txtPercentage.getText())
+        );
 
+       boolean isUpdate = updateBookBO.updateBook(bookDTO);
+       if (isUpdate){
+           new Alert(Alert.AlertType.INFORMATION,"Update Book!").show();
+       }else {
+           new Alert(Alert.AlertType.ERROR,"Try Again!").show();
+       }
     }
 
     @FXML
