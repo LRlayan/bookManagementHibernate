@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface UpdateBookBO extends SuperBO {
     List<BookDTO> findAllBooks();
+    boolean updateBook(BookDTO bookDTO);
 }
