@@ -59,13 +59,13 @@ public class viewBooksDetailsFormController implements Initializable {
 
     private void loadAllBooks() {
 
-        for (BookDTO bookDTO :home.findAllBook()){
+        for (BookDTO bookDTO : home.findAllBook()){
             obList.add(new BookTM(
                     bookDTO.getId(),
                     bookDTO.getTitle(),
                     bookDTO.getPublicationYear(),
                     bookDTO.getPrice(),
-                    bookDTO.getAuthor().getId(),
+                    bookDTO.getAuthorId(),
                     new JFXButton("Update"),
                    new JFXButton("Delete")
             ));
@@ -73,15 +73,21 @@ public class viewBooksDetailsFormController implements Initializable {
         buttonsDesign();
         bookTable.setItems(obList);
 
+        for (int i = 0; i < obList.size(); i++) {
+            obList.get(i).getUpdate().setOnAction(event -> {
 
+            });
+
+            obList.get(i).getDelete().setOnAction(event -> {
+
+            });
+        }
     }
 
     private void buttonsDesign() {
         for (int i = 0; i < obList.size(); i++) {
-
              obList.get(i).getUpdate().setTextFill(Color.WHITE);
              obList.get(i).getUpdate().setBackground(Background.fill(Color.GREEN));
-
              obList.get(i).getDelete().setTextFill(Color.WHITE);
              obList.get(i).getDelete().setBackground(Background.fill(Color.RED));
         }
