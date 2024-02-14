@@ -8,6 +8,8 @@ import javafx.scene.control.TextField;
 import lk.ijse.bo.custom.UpdateBookBO;
 import lk.ijse.bo.custom.impl.UpdateBookBOImpl;
 import lk.ijse.dto.BookDTO;
+import lk.ijse.pages.Impl.PagesImpl;
+import lk.ijse.pages.Pages;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.net.URL;
@@ -46,9 +48,11 @@ public class UpdateBookController implements Initializable {
     private List<BookDTO> bookDTOList = updateBook.findAllBooks();
     private Set<String> _bookDTOList = new HashSet<>();
 
+    Pages pages = new PagesImpl();
+
     @FXML
     void closeOnAction(ActionEvent event) {
-
+        pages.closeWindow(btnClose);
     }
 
     @FXML
