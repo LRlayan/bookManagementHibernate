@@ -1,19 +1,19 @@
 package lk.ijse.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.sun.javafx.scene.control.skin.FXVK;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import lk.ijse.bo.custom.HomeBO;
+import lk.ijse.bo.custom.ViewBooksDetailsBO;
 import lk.ijse.bo.custom.impl.HomeBOImpl;
+import lk.ijse.bo.custom.impl.ViewBooksDetailsBOImpl;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.dto.tm.BookTM;
 import lk.ijse.pages.Impl.PagesImpl;
@@ -22,6 +22,7 @@ import lk.ijse.pages.Pages;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class viewBooksDetailsFormController implements Initializable {
@@ -54,6 +55,8 @@ public class viewBooksDetailsFormController implements Initializable {
 
     ObservableList<BookTM> obList = FXCollections.observableArrayList();
 
+    ViewBooksDetailsBO viewBooksDetails = new ViewBooksDetailsBOImpl();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setCellValueFactory();
@@ -61,8 +64,8 @@ public class viewBooksDetailsFormController implements Initializable {
     }
 
     private void loadAllBooks() {
-
-        for (BookDTO bookDTO : home.findAllBook()){
+         List<BookDTO> books = home.findAllBook();
+        for (BookDTO bookDTO : books ){
             obList.add(new BookTM(
                     bookDTO.getId(),
                     bookDTO.getTitle(),
@@ -81,13 +84,32 @@ public class viewBooksDetailsFormController implements Initializable {
                 Pages pages = new PagesImpl();
                 try {
                     pages.popUpWindow("/view/updateBook.fxml");
+                    bookTable.refresh();
+                    loadAllBooks();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             });
 
+            int bookId = obList.get(i).getBookId();
             obList.get(i).getDelete().setOnAction(event -> {
+                ButtonType buttonYes = new ButtonType("Yes" , ButtonBar.ButtonData.OK_DONE);
+                ButtonType buttonNo = new ButtonType("No" , ButtonBar.ButtonData.CANCEL_CLOSE);
 
+                Optional<ButtonType> type = new Alert(Alert.AlertType.CONFIRMATION,"Are you sure delete book!",buttonYes,buttonNo).showAndWait();
+                if (type.get().getText() == "Yes"){
+
+                    try{
+                            boolean isDelete = viewBooksDetails.deleteBook(bookId);
+                            if (isDelete) {
+                                new Alert(Alert.AlertType.INFORMATION, "Delete Successfully!").show();
+                            }
+                    }catch (Exception e){
+                        new Alert(Alert.AlertType.ERROR,"Try Again").show();
+                    }
+                }
+                bookTable.refresh();
+                loadAllBooks();
             });
         }
     }
