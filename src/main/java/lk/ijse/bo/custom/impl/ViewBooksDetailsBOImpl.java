@@ -6,10 +6,6 @@ import java.util.ArrayList;
 
 public class ViewBooksDetailsBOImpl implements lk.ijse.bo.custom.ViewBooksDetailsBO {
 
-    @Override
-    public boolean saveAuthor() {
-        return false;
-    }
 
     @Override
     public boolean updateAuthor() {
