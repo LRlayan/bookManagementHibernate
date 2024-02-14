@@ -13,7 +13,7 @@ public class AuthorDAOImpl implements AuthorDAO {
     private Session session;
     private Transaction transaction;
     @Override
-    public boolean update() {
+    public boolean update(Author author) {
         return false;
     }
 
