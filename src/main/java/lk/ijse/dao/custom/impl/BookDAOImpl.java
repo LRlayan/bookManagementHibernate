@@ -16,8 +16,9 @@ public class BookDAOImpl implements BookDAO {
     public static Author author;
 
     @Override
-    public boolean update() {
-        return false;
+    public boolean update(Book book) {
+
+        return true;
     }
 
     @Override
@@ -66,5 +67,21 @@ public class BookDAOImpl implements BookDAO {
     public List<Book> findAllBookTitle() {
         Session session1 = FactoryConfiguration.getInstance().getSession();
         return session1.createQuery("from Book where publicationYear > '2010'").list();
+    }
+
+    @Override
+    public boolean updatePrice(int percentage) {
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query query = session.createQuery("update Book b set b.price = price+(price* :percentage /100) where b.author = :author");
+        query.setParameter("percentage" , percentage);
+        query.setParameter("author" , author);
+        int row = query.executeUpdate();
+
+        transaction.commit();
+        session.close();
+        return row > 0;
     }
 }
