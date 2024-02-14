@@ -27,4 +27,10 @@ public class UpdateBookBOImpl implements UpdateBookBO {
         }
         return bookDTOS;
     }
+
+    @Override
+    public boolean updateBook(BookDTO bookDTO) {
+        return false;
+    }
+
 }
