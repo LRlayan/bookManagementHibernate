@@ -65,6 +65,16 @@ public class UpdateBookController implements Initializable {
        }else {
            new Alert(Alert.AlertType.ERROR,"Try Again!").show();
        }
+       clearTextField();
+    }
+
+    private void clearTextField() {
+        txtBookId.clear();
+        txtAuthorId.clear();
+        txtBookTitle.clear();
+        txtPublishedYear.clear();
+        txtPrice.clear();
+        txtPercentage.clear();
     }
 
     @FXML
