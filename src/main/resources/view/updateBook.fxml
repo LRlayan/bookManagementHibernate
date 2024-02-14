@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.controller.UpdateBookController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="468.0" prefWidth="369.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateBookController">
+   <children>
+      <Label layoutX="17.0" layoutY="15.0" text="Update Book">
+         <font>
+            <Font name="Britannic Bold" size="22.0" />
+         </font>
+      </Label>
+      <Line endX="108.0" layoutX="248.0" layoutY="27.0" startX="-100.0" />
+      <TextField fx:id="txtBookId" layoutX="36.0" layoutY="131.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Id" />
+      <Label layoutX="36.0" layoutY="109.0" text="Book Id" />
+      <TextField fx:id="txtBookTitle" layoutX="36.0" layoutY="249.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Title" />
+      <Label layoutX="36.0" layoutY="227.0" text="Book Title" />
+      <TextField fx:id="txtPublishedYear" layoutX="36.0" layoutY="309.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Published Year" />
+      <Label layoutX="36.0" layoutY="287.0" text="Book Published Year" />
+      <TextField fx:id="txtPrice" layoutX="36.0" layoutY="369.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Price" />
+      <Label layoutX="36.0" layoutY="347.0" text="Book Price" />
+      <JFXButton buttonType="RAISED" layoutX="195.0" layoutY="420.0" onAction="#updateBooksOnAction" style="-fx-background-color: #087544;" text="Update" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtAuthorId" layoutX="36.0" layoutY="189.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Author Id" />
+      <Label layoutX="36.0" layoutY="167.0" text="Author Id" />
+      <JFXButton fx:id="btnClose" buttonType="RAISED" layoutX="269.0" layoutY="420.0" onAction="#closeOnAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #087544;" text="Close" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="searchBook" layoutX="35.0" layoutY="62.0" onAction="#searchBarOnAction" prefHeight="25.0" prefWidth="295.0" promptText="Search Book" style="-fx-background-radius: 30;" />
+   </children>
 </AnchorPane>
