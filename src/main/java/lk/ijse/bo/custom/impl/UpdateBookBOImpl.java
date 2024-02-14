@@ -29,8 +29,7 @@ public class UpdateBookBOImpl implements UpdateBookBO {
     }
 
     @Override
-    public boolean updateBook(BookDTO bookDTO) {
-        return false;
+    public boolean updateBook(int percentage) {
+        return bookDAO.updatePrice(percentage);
     }
-
 }
