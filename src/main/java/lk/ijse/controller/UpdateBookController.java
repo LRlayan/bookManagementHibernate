@@ -45,12 +45,9 @@ public class UpdateBookController implements Initializable {
     private TextField txtPercentage;
 
     UpdateBookBO updateBook = new UpdateBookBOImpl();
-
     private List<BookDTO> bookDTOList = updateBook.findAllBooks();
     private Set<String> _bookDTOList = new HashSet<>();
-
     Pages pages = new PagesImpl();
-
     UpdateBookBO updateBookBO = new UpdateBookBOImpl();
 
     @FXML
@@ -60,16 +57,9 @@ public class UpdateBookController implements Initializable {
 
     @FXML
     void updateBooksOnAction(ActionEvent event) {
-        BookDTO bookDTO = new BookDTO(
-                Integer.parseInt(txtBookId.getText()),
-                Integer.parseInt(txtAuthorId.getText()),
-                txtBookTitle.getText(),
-                txtPublishedYear.getText(),
-                Double.parseDouble(txtPrice.getText()),
-                Integer.parseInt(txtPercentage.getText())
-        );
+        int percentage = Integer.parseInt(txtPercentage.getText());
 
-       boolean isUpdate = updateBookBO.updateBook(bookDTO);
+       boolean isUpdate = updateBookBO.updateBook(percentage);
        if (isUpdate){
            new Alert(Alert.AlertType.INFORMATION,"Update Book!").show();
        }else {
