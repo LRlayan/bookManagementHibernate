@@ -38,6 +38,9 @@ public class UpdateBookController implements Initializable {
     @FXML
     private TextField searchBook;
 
+    @FXML
+    private TextField txtPercentage;
+
     UpdateBookBO updateBook = new UpdateBookBOImpl();
 
     private List<BookDTO> bookDTOList = updateBook.findAllBooks();
@@ -63,7 +66,7 @@ public class UpdateBookController implements Initializable {
 
         for (int i = 0; i < bookDTOList.size(); i++){
             if (title.equals(bookDTOList.get(i).getTitle())){
-                txtBookId.setText(bookDTOList.get(i).getTitle());
+                txtBookId.setText(String.valueOf(bookDTOList.get(i).getId()));
                 txtAuthorId.setText(String.valueOf(bookDTOList.get(i).getAuthorId()));
                 txtBookTitle.setText(bookDTOList.get(i).getTitle());
                 txtPublishedYear.setText(bookDTOList.get(i).getPublicationYear());
