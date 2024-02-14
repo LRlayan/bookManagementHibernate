@@ -16,7 +16,10 @@ import lk.ijse.bo.custom.HomeBO;
 import lk.ijse.bo.custom.impl.HomeBOImpl;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.dto.tm.BookTM;
+import lk.ijse.pages.Impl.PagesImpl;
+import lk.ijse.pages.Pages;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -75,7 +78,12 @@ public class viewBooksDetailsFormController implements Initializable {
 
         for (int i = 0; i < obList.size(); i++) {
             obList.get(i).getUpdate().setOnAction(event -> {
-
+                Pages pages = new PagesImpl();
+                try {
+                    pages.popUpWindow("/view/updateBook.fxml");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             });
 
             obList.get(i).getDelete().setOnAction(event -> {
