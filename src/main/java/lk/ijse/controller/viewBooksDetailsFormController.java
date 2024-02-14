@@ -85,7 +85,6 @@ public class viewBooksDetailsFormController implements Initializable {
                 try {
                     pages.popUpWindow("/view/updateBook.fxml");
                     bookTable.refresh();
-                    loadAllBooks();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
