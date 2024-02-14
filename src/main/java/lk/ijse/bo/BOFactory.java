@@ -1,5 +1,6 @@
 package lk.ijse.bo;
 
+import lk.ijse.bo.custom.impl.UpdateBookBOImpl;
 import lk.ijse.bo.custom.impl.ViewBooksDetailsBOImpl;
 import lk.ijse.bo.custom.impl.DashboardImpl;
 import lk.ijse.bo.custom.impl.HomeBOImpl;
@@ -13,7 +14,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        DASHBOARD,HOME,VIEW_BOOKS_DETAILS
+        DASHBOARD,HOME,VIEW_BOOKS_DETAILS,UPDATE_BOOK
     }
 
     public SuperBO boTypes(BOTypes boTypes){
@@ -24,6 +25,8 @@ public class BOFactory {
                 return new DashboardImpl();
             case HOME:
                 return new HomeBOImpl();
+            case UPDATE_BOOK:
+                return new UpdateBookBOImpl();
             default:
                 return null;
         }
