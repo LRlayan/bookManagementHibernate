@@ -1,13 +1,11 @@
 package lk.ijse.dao.custom.impl;
 
-import jakarta.persistence.Query;
 import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.custom.AuthorDAO;
 import lk.ijse.entity.Author;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AuthorDAOImpl implements AuthorDAO {
@@ -33,7 +31,7 @@ public class AuthorDAOImpl implements AuthorDAO {
     }
 
     @Override
-    public boolean delete() {
+    public boolean delete(int id) {
         return false;
     }
 
