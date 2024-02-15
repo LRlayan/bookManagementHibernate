@@ -49,4 +49,9 @@ public class ViewBooksDetailsBOImpl implements lk.ijse.bo.custom.ViewBooksDetail
     public List<BookDTO> findAllBook() {
         return null;
     }
+
+    @Override
+    public Object sumOfPrices() {
+        return bookDAO.sumOfPrices();
+    }
 }
