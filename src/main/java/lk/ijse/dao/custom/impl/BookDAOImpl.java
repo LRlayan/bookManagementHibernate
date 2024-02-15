@@ -70,6 +70,13 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
+    public Object sumOfPrices() {
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+        return session.createQuery("select sum(price)/count(id) from Book ").uniqueResult();
+    }
+
+    @Override
     public boolean updatePrice(int percentage) {
 
         Session session = FactoryConfiguration.getInstance().getSession();
