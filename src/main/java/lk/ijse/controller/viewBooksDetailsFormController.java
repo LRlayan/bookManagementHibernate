@@ -71,6 +71,9 @@ public class viewBooksDetailsFormController implements Initializable {
     @FXML
     private Label lblAveragePrice;
 
+    @FXML
+    private TextField txtCountry;
+
     ObservableList<BookTM> obList = FXCollections.observableArrayList();
     ObservableList<AuthorTM> obListAuthor = FXCollections.observableArrayList();
     ViewBooksDetailsBO viewBooksDetails = new ViewBooksDetailsBOImpl();
@@ -220,14 +223,24 @@ public class viewBooksDetailsFormController implements Initializable {
     @FXML
     void allBooksByAuthorOnAction(ActionEvent event) {
         List<Object[]> allBooksByAuthor = viewBooksDetails.allBooksByAuthor();
-            for (Object[] authorsBook : allBooksByAuthor) {
-                for (int i = 0; i <allBooksByAuthor.size(); i++) {
-                    String name = (String) authorsBook[0];
-                    Long count = (Long) authorsBook[1];
+        for (Object[] authorsBook : allBooksByAuthor) {
+            for (int i = 0; i <allBooksByAuthor.size(); i++) {
+                String name = (String) authorsBook[0];
+                Long count = (Long) authorsBook[1];
 
-                    System.out.println(name);
-                    System.out.println(count);
-                }
+                System.out.println(name);
+                System.out.println(count);
             }
+        }
+    }
+
+    @FXML
+    void question6OnAction(ActionEvent event) {
+        String country = txtCountry.getText();
+        List<BookDTO> bookDTOS = viewBooksDetails.question6(country);
+
+        for (BookDTO bookDTO : bookDTOS){
+            System.out.println(bookDTO);
+        }
     }
 }
