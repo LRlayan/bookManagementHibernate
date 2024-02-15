@@ -1,6 +1,5 @@
 package lk.ijse.dao.custom.impl;
 
-import jakarta.persistence.Query;
 import lk.ijse.config.FactoryConfiguration;
 import lk.ijse.dao.custom.AuthorDAO;
 import lk.ijse.entity.Author;
