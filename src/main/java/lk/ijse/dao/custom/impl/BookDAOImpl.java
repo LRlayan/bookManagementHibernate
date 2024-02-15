@@ -91,4 +91,10 @@ public class BookDAOImpl implements BookDAO {
         session.close();
         return row > 0;
     }
+
+    @Override
+    public List<Book> question6(String country) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        return session.createQuery("SELECT b from Book b JOIN b.author a WHERE a.country = :country").setParameter("country" ,country).getResultList();
+    }
 }
