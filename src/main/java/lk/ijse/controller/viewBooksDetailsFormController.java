@@ -68,6 +68,9 @@ public class viewBooksDetailsFormController implements Initializable {
     @FXML
     private TableColumn<?, ?> colAuthorDelete;
 
+    @FXML
+    private Label lblAveragePrice;
+
     ObservableList<BookTM> obList = FXCollections.observableArrayList();
     ObservableList<AuthorTM> obListAuthor = FXCollections.observableArrayList();
     ViewBooksDetailsBO viewBooksDetails = new ViewBooksDetailsBOImpl();
@@ -209,7 +212,8 @@ public class viewBooksDetailsFormController implements Initializable {
         }
     }
 
-    public void question2OnAction(ActionEvent actionEvent) {
-
+    public void averagePriceOnAction(ActionEvent actionEvent) {
+        double avgPrice = (double) viewBooksDetails.sumOfPrices();
+        lblAveragePrice.setText(String.valueOf(avgPrice));
     }
 }
