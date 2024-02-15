@@ -53,4 +53,10 @@ public class AuthorDAOImpl implements AuthorDAO {
         Session session1 = FactoryConfiguration.getInstance().getSession();
         return session1.createQuery("FROM Author").list();
     }
+
+    @Override
+    public List<Object[]> allBooksByAuthor() {
+        Session session2 = FactoryConfiguration.getInstance().getSession();
+        return session2.createQuery("SELECT a.name , COUNT(b) FROM Author a LEFT JOIN a.bookList b GROUP BY a.id ").list();
+    }
 }
