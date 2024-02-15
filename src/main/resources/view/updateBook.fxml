@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="520.0" prefWidth="369.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateBookController">
+<AnchorPane prefHeight="557.0" prefWidth="369.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UpdateBookController">
    <children>
       <Label layoutX="17.0" layoutY="15.0" text="Update Book">
          <font>
@@ -15,28 +15,30 @@
          </font>
       </Label>
       <Line endX="108.0" layoutX="248.0" layoutY="27.0" startX="-100.0" />
-      <TextField fx:id="txtBookId" layoutX="36.0" layoutY="131.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Id" />
-      <Label layoutX="36.0" layoutY="109.0" text="Book Id" />
-      <TextField fx:id="txtBookTitle" layoutX="36.0" layoutY="249.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Title" />
-      <Label layoutX="36.0" layoutY="227.0" text="Book Title" />
-      <TextField fx:id="txtPublishedYear" layoutX="36.0" layoutY="309.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Published Year" />
-      <Label layoutX="36.0" layoutY="287.0" text="Book Published Year" />
-      <TextField fx:id="txtPrice" layoutX="36.0" layoutY="369.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Price" />
-      <Label layoutX="36.0" layoutY="347.0" text="Book Price" />
-      <JFXButton buttonType="RAISED" layoutX="195.0" layoutY="476.0" onAction="#updateBooksOnAction" style="-fx-background-color: #087544;" text="Update" textFill="WHITE">
+      <TextField fx:id="txtBookId" layoutX="36.0" layoutY="161.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Id" />
+      <Label layoutX="36.0" layoutY="139.0" text="Book Id" />
+      <TextField fx:id="txtBookTitle" layoutX="36.0" layoutY="279.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Title" />
+      <Label layoutX="36.0" layoutY="257.0" text="Book Title" />
+      <TextField fx:id="txtPublishedYear" layoutX="36.0" layoutY="339.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Published Year" />
+      <Label layoutX="36.0" layoutY="317.0" text="Book Published Year" />
+      <TextField fx:id="txtPrice" layoutX="36.0" layoutY="399.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Book Price" />
+      <Label layoutX="36.0" layoutY="377.0" text="Book Price" />
+      <JFXButton buttonType="RAISED" layoutX="165.0" layoutY="506.0" onAction="#updateBooksOnAction" style="-fx-background-color: #087544;" text="Update Price" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="txtAuthorId" layoutX="36.0" layoutY="189.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Author Id" />
-      <Label layoutX="36.0" layoutY="167.0" text="Author Id" />
-      <JFXButton fx:id="btnClose" buttonType="RAISED" layoutX="269.0" layoutY="476.0" onAction="#closeOnAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #087544;" text="Close" textFill="WHITE">
+      <TextField fx:id="txtAuthorId" layoutX="36.0" layoutY="219.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter Author Id" />
+      <Label layoutX="36.0" layoutY="197.0" text="Author Id" />
+      <JFXButton fx:id="btnClose" buttonType="RAISED" layoutX="269.0" layoutY="506.0" onAction="#closeOnAction" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: #087544;" text="Close" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="searchBook" layoutX="35.0" layoutY="62.0" onAction="#searchBarOnAction" prefHeight="25.0" prefWidth="295.0" promptText="Search Book" style="-fx-background-radius: 30;" />
-      <TextField fx:id="txtPercentage" layoutX="36.0" layoutY="430.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter the increasing percentage" />
-      <Label layoutX="36.0" layoutY="408.0" prefHeight="17.0" prefWidth="141.0" text="Book Price Increase" />
+      <TextField fx:id="searchBook" layoutX="35.0" layoutY="82.0" onAction="#searchBarOnAction" prefHeight="25.0" prefWidth="295.0" promptText="Search Book" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtPercentage" layoutX="36.0" layoutY="460.0" prefHeight="25.0" prefWidth="295.0" promptText="Enter the increasing percentage" />
+      <Label layoutX="36.0" layoutY="438.0" prefHeight="17.0" prefWidth="141.0" text="Book Price Increase" />
+      <Label layoutX="36.0" layoutY="59.0" text="Search Books" />
+      <Label layoutX="187.0" layoutY="111.0" text="After searching press enter" textFill="#0077bc" />
    </children>
 </AnchorPane>
