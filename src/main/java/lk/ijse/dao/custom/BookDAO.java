@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BookDAO extends CrudDAO<Book> {
     List<Book> findAllBookTitle();
-
     Object sumOfPrices();
     boolean updatePrice(int percentage);
+    List<Book> question6(String country);
 }
