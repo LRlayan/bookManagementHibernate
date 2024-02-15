@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="787.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.viewBooksDetailsFormController">
+<AnchorPane prefHeight="728.0" prefWidth="1235.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.viewBooksDetailsFormController">
    <children>
       <Label layoutX="22.0" layoutY="27.0" text="Published Book Details">
          <font>
@@ -16,8 +16,7 @@
          </font>
       </Label>
       <Line endX="444.0" layoutX="316.0" layoutY="36.0" startX="-100.0" />
-      <JFXButton layoutX="51.0" layoutY="70.0" onAction="#question1OnAction" text="Qeustion 01" />
-      <JFXButton layoutX="159.0" layoutY="70.0" onAction="#question2OnAction" text="Qeustion 02" />
+      <JFXButton layoutX="51.0" layoutY="70.0" onAction="#question1OnAction" style="-fx-background-color: #008ae6;" text="Qeustion 01" />
       <TableView fx:id="bookTable" layoutX="38.0" layoutY="142.0" prefHeight="221.0" prefWidth="712.0">
         <columns>
           <TableColumn fx:id="colBookId" prefWidth="87.0" text="BookId" />
@@ -43,5 +42,11 @@
             <TableColumn fx:id="colAuthorDelete" minWidth="0.0" prefWidth="113.0" text="Delete" />
         </columns>
       </TableView>
+      <JFXButton layoutX="159.0" layoutY="70.0" onAction="#averagePriceOnAction" style="-fx-background-color: #008ae6;" text="Average Price of All Books" />
+      <Label fx:id="lblAveragePrice" layoutX="162.0" layoutY="113.0" prefHeight="18.0" prefWidth="171.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
