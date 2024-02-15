@@ -15,4 +15,5 @@ public interface ViewBooksDetailsBO extends SuperBO {
     boolean deleteBook(int id);
     ArrayList<AuthorDTO> findAllAuthors();
     List<BookDTO> findAllBook();
+    Object sumOfPrices();
 }
