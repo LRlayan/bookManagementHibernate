@@ -47,7 +47,18 @@ public class ViewBooksDetailsBOImpl implements lk.ijse.bo.custom.ViewBooksDetail
 
     @Override
     public List<BookDTO> findAllBook() {
-        return null;
+        ArrayList<BookDTO> bookDTOS = new ArrayList<>();
+
+        for (Book book : bookDAO.findAll()){
+            bookDTOS.add(new BookDTO(
+                    book.getId(),
+                    book.getTitle(),
+                    book.getPublicationYear(),
+                    book.getPrice(),
+                    book.getAuthor().getId()
+            ));
+        }
+        return bookDTOS;
     }
 
     @Override
@@ -69,5 +80,16 @@ public class ViewBooksDetailsBOImpl implements lk.ijse.bo.custom.ViewBooksDetail
            bookDTOS.add(new BookDTO(books.getTitle()));
         }
        return bookDTOS;
+    }
+
+    @Override
+    public List<BookDTO> books() {
+        List<Book> books = bookDAO.findAllBookTitle();
+        ArrayList<BookDTO> bookDTOS = new ArrayList<>();
+
+        for (Book book : books){
+            bookDTOS.add(new BookDTO(book.getTitle()));
+        }
+        return bookDTOS;
     }
 }
