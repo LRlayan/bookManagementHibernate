@@ -59,4 +59,15 @@ public class ViewBooksDetailsBOImpl implements lk.ijse.bo.custom.ViewBooksDetail
     public List<Object[]> allBooksByAuthor() {
        return authorDAO.allBooksByAuthor();
     }
+
+    @Override
+    public List<BookDTO> question6(String country) {
+       List<Book> book = bookDAO.question6(country);
+       List<BookDTO> bookDTOS = new ArrayList<>();
+
+       for (Book books : book){
+           bookDTOS.add(new BookDTO(books.getTitle()));
+        }
+       return bookDTOS;
+    }
 }
