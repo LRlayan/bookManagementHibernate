@@ -216,4 +216,18 @@ public class viewBooksDetailsFormController implements Initializable {
         double avgPrice = (double) viewBooksDetails.sumOfPrices();
         lblAveragePrice.setText(String.valueOf(avgPrice));
     }
+
+    @FXML
+    void allBooksByAuthorOnAction(ActionEvent event) {
+        List<Object[]> allBooksByAuthor = viewBooksDetails.allBooksByAuthor();
+            for (Object[] authorsBook : allBooksByAuthor) {
+                for (int i = 0; i <allBooksByAuthor.size(); i++) {
+                    String name = (String) authorsBook[0];
+                    Long count = (Long) authorsBook[1];
+
+                    System.out.println(name);
+                    System.out.println(count);
+                }
+            }
+    }
 }
