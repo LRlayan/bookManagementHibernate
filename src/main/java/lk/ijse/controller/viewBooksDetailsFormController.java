@@ -133,7 +133,7 @@ public class viewBooksDetailsFormController implements Initializable {
     }
 
     private void loadAllBooks() {
-         List<BookDTO> books = home.findAllBook();
+         List<BookDTO> books = viewBooksDetails.findAllBook();
         for (BookDTO bookDTO : books ){
             obList.add(new BookTM(
                     bookDTO.getId(),
@@ -209,7 +209,7 @@ public class viewBooksDetailsFormController implements Initializable {
     }
 
     public void question1OnAction(ActionEvent actionEvent) {
-        List<BookDTO> books = home.books();
+        List<BookDTO> books = viewBooksDetails.books();
         for (int i=0; i < books.size(); i++) {
             System.out.println(books.get(i).getTitle());
         }
