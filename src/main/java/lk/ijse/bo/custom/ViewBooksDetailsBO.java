@@ -16,4 +16,5 @@ public interface ViewBooksDetailsBO extends SuperBO {
     ArrayList<AuthorDTO> findAllAuthors();
     List<BookDTO> findAllBook();
     Object sumOfPrices();
+    List<Object[]> allBooksByAuthor();
 }
