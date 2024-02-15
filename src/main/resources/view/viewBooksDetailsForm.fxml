@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -49,5 +50,8 @@
          </font>
       </Label>
       <JFXButton layoutX="352.0" layoutY="70.0" onAction="#allBooksByAuthorOnAction" style="-fx-background-color: #008ae6;" text="all Books By Author" />
+      <JFXButton layoutX="1092.0" layoutY="153.0" onAction="#question6OnAction" style="-fx-background-color: #008ae6;" text="Question 6" />
+      <Label layoutX="832.0" layoutY="70.0" text="Country Name" />
+      <TextField fx:id="txtCountry" layoutX="832.0" layoutY="101.0" prefHeight="26.0" prefWidth="352.0" promptText="Enter Country" />
    </children>
 </AnchorPane>
