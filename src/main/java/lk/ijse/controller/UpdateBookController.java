@@ -6,8 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UpdateBookBO;
-import lk.ijse.bo.custom.impl.UpdateBookBOImpl;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.pages.Impl.PagesImpl;
 import lk.ijse.pages.Pages;
@@ -44,11 +44,10 @@ public class UpdateBookController implements Initializable {
     @FXML
     private TextField txtPercentage;
 
-    UpdateBookBO updateBook = new UpdateBookBOImpl();
+    UpdateBookBO updateBook = (UpdateBookBO) BOFactory.getBOFactory().boTypes(BOFactory.BOTypes.UPDATE_BOOK);
     private List<BookDTO> bookDTOList = updateBook.findAllBooks();
     private Set<String> _bookDTOList = new HashSet<>();
     Pages pages = new PagesImpl();
-    UpdateBookBO updateBookBO = new UpdateBookBOImpl();
 
     @FXML
     void closeOnAction(ActionEvent event) {
@@ -59,7 +58,7 @@ public class UpdateBookController implements Initializable {
     void updateBooksOnAction(ActionEvent event) {
         int percentage = Integer.parseInt(txtPercentage.getText());
 
-       boolean isUpdate = updateBookBO.updateBook(percentage);
+       boolean isUpdate = updateBook.updateBook(percentage);
        if (isUpdate){
            new Alert(Alert.AlertType.INFORMATION,"Update Book!").show();
        }else {

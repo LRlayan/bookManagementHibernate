@@ -6,17 +6,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.HomeBO;
-import lk.ijse.bo.custom.impl.HomeBOImpl;
-import lk.ijse.config.FactoryConfiguration;
-import lk.ijse.dao.custom.AuthorDAO;
-import lk.ijse.dao.custom.impl.AuthorDAOImpl;
 import lk.ijse.dto.AuthorDTO;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.pages.Impl.PagesImpl;
 import lk.ijse.pages.Pages;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.io.IOException;
 
@@ -42,7 +37,7 @@ public class HomePageFormController {
 
     Pages pages = new PagesImpl();
 
-    HomeBO home = new HomeBOImpl();
+    HomeBO home = (HomeBO) BOFactory.getBOFactory().boTypes(BOFactory.BOTypes.HOME);
 
     @FXML
     void viewBookDetailsOnAction(ActionEvent event) throws IOException {

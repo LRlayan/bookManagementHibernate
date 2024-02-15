@@ -10,10 +10,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
-import lk.ijse.bo.custom.HomeBO;
+import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.ViewBooksDetailsBO;
-import lk.ijse.bo.custom.impl.HomeBOImpl;
-import lk.ijse.bo.custom.impl.ViewBooksDetailsBOImpl;
 import lk.ijse.dto.AuthorDTO;
 import lk.ijse.dto.BookDTO;
 import lk.ijse.dto.tm.AuthorTM;
@@ -76,9 +74,7 @@ public class viewBooksDetailsFormController implements Initializable {
 
     ObservableList<BookTM> obList = FXCollections.observableArrayList();
     ObservableList<AuthorTM> obListAuthor = FXCollections.observableArrayList();
-    ViewBooksDetailsBO viewBooksDetails = new ViewBooksDetailsBOImpl();
-    HomeBO home = new HomeBOImpl();
-
+    ViewBooksDetailsBO viewBooksDetails = (ViewBooksDetailsBO) BOFactory.getBOFactory().boTypes(BOFactory.BOTypes.VIEW_BOOKS_DETAILS);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
