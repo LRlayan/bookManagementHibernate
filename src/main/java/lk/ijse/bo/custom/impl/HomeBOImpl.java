@@ -36,28 +36,11 @@ public class HomeBOImpl implements HomeBO {
     @Override
     public List<BookDTO> findAllBook() {
 
-        ArrayList<BookDTO> bookDTOS = new ArrayList<>();
-
-       for (Book book : bookDAO.findAll()){
-           bookDTOS.add(new BookDTO(
-                   book.getId(),
-                   book.getTitle(),
-                   book.getPublicationYear(),
-                   book.getPrice(),
-                   book.getAuthor().getId()
-           ));
-       }
-       return bookDTOS;
+       return null;
     }
 
     @Override
     public List<BookDTO> books() {
-        List<Book> books = bookDAO.findAllBookTitle();
-        ArrayList<BookDTO> bookDTOS = new ArrayList<>();
-
-        for (Book book : books){
-            bookDTOS.add(new BookDTO(book.getTitle()));
-        }
-        return bookDTOS;
+        return null;
     }
 }
